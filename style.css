@@ -1,0 +1,557 @@
+/* Reset  */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+:root {
+    font-size: 62.5%;
+
+    /* utility components  */
+    --main-color: #313131;
+}
+
+::selection {
+    color: white;
+    background-color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    flex-grow: 1;
+    color: var(--main-color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_*Main styling *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* Nav Bar *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+nav#navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: calc(4vh + 4vw);
+}
+
+.navbar__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.navbar__content--logo {
+    width: calc(15vw + 15vh);
+    cursor: pointer;
+}
+
+.navbar__content--logo img {
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+ul.navbar__content--links {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+ul.navbar__content--links li {
+    margin-right: 3vw;
+}
+
+ul.navbar__content--links li a:visited,
+ul.navbar__content--links li a:link {
+    text-transform: uppercase;
+    color: var(--main-color);
+    font-size: calc(1rem + 00.4615vw);
+    padding: 0.2rem 0.4rem;
+    position: relative;
+    font-weight: 600;
+
+    /* border: 1px red solid; */
+}
+
+ul.navbar__content--links li a:visited::before,
+ul.navbar__content--links li a:link::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0;
+    bottom: -0.3rem;
+    height: 0.2rem;
+    background-color: red;
+    transition: transform 0.45s cubic-bezier(1, 0, 0, 1);
+    transform: scaleX(0);
+    transform-origin: right;
+
+}
+
+ul.navbar__content--links li a:hover::before,
+ul.navbar__content--links li a:active::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* Hero Section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+section#hero {
+    width: 100%;
+    background-image: url('./banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 5rem;
+    height: calc(100vh - calc(4vh + 4vw));
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+}
+
+.hero__content {
+    width: 70rem;
+    color: white;
+
+    margin: 0 0 4rem 4rem;
+    padding: 2rem;
+}
+
+h1.hero__content--title,
+p.hero__content--para {
+    margin-bottom: calc(2rem + 1.2307vw);
+}
+
+
+h1.hero__content--title {
+    font-size: calc(2rem + 2vw);
+}
+
+p.hero__content--para {
+    font-size: calc(1rem + 00.4615vw);
+    line-height: 1.5;
+    letter-spacing: 0.2;
+}
+
+a.hero__content--link:link,
+a.hero__content--link:visited {
+    color: black;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+}
+
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* work section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+/* section#work {
+    background-color: white;
+} */
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_ section About  _*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+
+#about {
+    display: flex;
+    justify-self: center;
+    background-color: #f5f5f5;
+    padding: 4rem;
+
+}
+
+.about__content {
+    text-align: center;
+}
+
+.about__content--header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h2.about__content--header__title {
+    text-transform: uppercase;
+    font-size: calc(2rem + 1.5384vw);
+    color: red;
+}
+
+p.about__content--header__para {
+    font-size: calc(1rem + 0.7692vw);
+    color: var(--main-color);
+}
+
+h2.about__content--header__title,
+p.about__content--header__para {
+    margin-bottom: 3rem;
+}
+
+
+.about__content--cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.about__content--card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 3rem;
+    color: var(--main-color);
+    padding: 1rem;
+}
+
+h3.about__content--card__title {
+    font-size: 1.9rem;
+}
+
+.about__content--card__img,
+h3.about__content--card__title {
+    margin-bottom: 1rem;
+}
+
+.about__content--card__para {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.about__talk {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 4rem;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.about__talk--title {
+    font-size: calc(1.2rem + 1.5384vw);
+    font-weight: 100;
+}
+
+a.about__talk--link:link,
+a.about__talk--link:visited {
+    color: white;
+    background-color: red;
+    padding: calc(1rem + 0.3846vw) calc(2rem + 1.5384vw);
+    font-size: 2rem;
+    border-radius: 3rem;
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* qna Section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+#qna {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qna__content {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+}
+
+.qna__content--use {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 60rem;
+}
+
+.box {
+    border: lightgrey 1px solid;
+    margin-bottom: 2rem;
+}
+
+.box__head {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem;
+}
+
+.box__head h3 {
+    font-size: calc(1rem + 0.7692vw);
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.box__head i {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.box p {
+    font-size: 1.4rem;
+    padding: 2rem;
+    display: none;
+}
+
+.clicked p {
+    display: block;
+}
+
+
+.image {
+    flex-basis: 40%;
+}
+
+.image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* toask Section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+#toask {
+    margin: 4rem 0;
+    height: 70vh;
+    background-image: url('what-people.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.ask__content {
+    margin-right: 2rem;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+h3.ask__content--title,
+p.ask__content--para {
+    color: white;
+    margin-bottom: 2rem;
+}
+
+h3.ask__content--title {
+    font-size: calc(2rem + 1.5384vw);
+}
+
+p.ask__content--para {
+    font-size: calc(0.8rem + 0.7692vw);
+}
+
+a.ask__content--link {
+    font-size: calc(1rem + 0.3846vw);
+    text-transform: uppercase;
+    background-color: red;
+    padding: calc(1rem + 0.3846vw) calc(2rem + 1.5384vw);
+    border-radius: 5rem;
+}
+
+
+
+
+
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* media query @ (max-width: 1270px) *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* Hero Section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+
+@media screen and (max-width:1270px) {
+    section#hero {
+        background-position: 100%;
+    }
+
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* media query @ (max-width: 1073px) *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+@media screen and (max-width:1073px) {
+
+    .image {
+        flex-basis: 100%;
+        padding: 2rem;
+    }
+
+    .image img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .qna__content--use {
+        flex-basis: 100%;
+    }
+
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* media query @ (max-width: 1020px) *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* Hero Section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+@media screen and (max-width:1020px) {
+    section#hero {
+        background-position: 60%;
+    }
+
+    #toask {
+        background-position: 30%;
+    }
+
+
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* media query @ (min-width: 1000px) *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+/* @media screen and (min-width: 1000px) {
+    .about__content--cards {
+        flex-wrap: nowrap;
+    }
+} */
+
+
+
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* media query @ (max-width: 750px) *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* Hero Section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+@media screen and (max-width:750px) {
+    section#hero {
+        background-position: 50%;
+    }
+
+    /* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* toask section*_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+    #toask {
+        background-position: 10%;
+    }
+
+    .ask__content {
+        width: 100%;
+        text-align: start;
+        align-items: start;
+        justify-content: end;
+        padding: 2rem;
+    }
+
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* media query @ (max-width: 600px) *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+@media screen and (max-width:600px) {
+
+    nav#navbar {
+        width: 0;
+        position: absolute;
+        z-index: 2;
+
+    }
+
+
+    .navbar__content {
+        position: fixed;
+        top: 0;
+        right: -30rem;
+        height: 100%;
+        width: 30rem;
+        text-align: center;
+        background-color: white;
+    }
+
+    .change {
+        left: 55%;
+    }
+
+    .navbar__content--logo {
+        display: none;
+    }
+
+    ul.navbar__content--links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    ul.navbar__content--links li {
+        margin: 0 0 5vw 3vw;
+    }
+
+    .navbar__content--hamburger {
+        position: fixed;
+        background-color: white;
+        width: 5rem;
+        height: 5rem;
+        right: 2rem;
+        top: 3rem;
+        border-radius: 50%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        padding: 0.8rem;
+        cursor: pointer;
+        z-index: 2;
+
+    }
+
+    .navbar__content--hamburger .line {
+        width: 100%;
+        height: 0.2rem;
+        background-color: black;
+        border-radius: 0.2rem;
+        transition: all 0.45s ease-in-out;
+    }
+
+    .change .navbar__content--hamburger .line-1 {
+        transform: rotate(45deg) translate(0.9rem, 0.6rem);
+    }
+
+    .change .navbar__content--hamburger .line-2 {
+        opacity: 0;
+    }
+
+    .change .navbar__content--hamburger .line-3 {
+        transform: rotate(-45deg) translate(0.9rem, -0.6rem);
+    }
+
+    /* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* Hero Section *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+    section#hero {
+        background-position: 40%;
+        height: 100vh;
+    }
+
+    .hero__content {
+        margin: 0;
+    }
+}
+
+/* *_*_*_*_*_*_*_*_*_**__*_*_*_*_* media query @ (mix-width: 600px) *_*_*_*_*_*_*_*_*_**__*_*_*_*_* */
+@media screen and (min-width: 600px) {
+    .about__content--cards {
+        flex-wrap: nowrap;
+    }
+}
